@@ -51,7 +51,7 @@ class Employee:
 
 
         
-        statement += ". Their total pay is " + str(self.get_pay() + self.get_commission()) + "."
+        statement += ". Their total pay is " + str(self.get_pay()) + "."
         return statement 
 
 
