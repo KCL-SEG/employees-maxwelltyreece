@@ -45,7 +45,7 @@ class Employee:
 
         
         if self.commission == "bonus":
-            statement += " and recieves a bonus commission of " + str(self.comRate)
+            statement += " and receives a bonus commission of " + str(self.comRate)
         elif self.commission == "rate":
             statement += " and recieves a commission for " + str(self.contractNumber) + " contract(s) at " + str(self.comRate) + "/contract"
 
