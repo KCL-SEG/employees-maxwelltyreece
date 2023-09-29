@@ -17,6 +17,12 @@ class Employee:
 
     def get_pay(self):
         if self.contractType == "hourly":
+            return (self.hours * self.rate) + self.get_commission()
+        elif self.contractType == "monthly":
+            return self.rate + self.get_commission()
+
+    def get_single_pay(self):
+        if self.contractType == "hourly":
             return (self.hours * self.rate)
         elif self.contractType == "monthly":
             return self.rate 
@@ -33,7 +39,7 @@ class Employee:
         statement = self.name + " works on a "
 
         if self.contractType == "monthly":
-            statement += "monthly salary of " + str(self.get_pay()) 
+            statement += "monthly salary of " + str(self.get_single_pay()) 
         else:
             statement += "contract of " + str(self.hours) + " hours at " + str(self.rate) + "/hour"
 
@@ -71,4 +77,3 @@ robbie = Employee('Robbie','monthly',2000,'bonus',1500,0)
 # Ariel works on a contract of 120 hours at 30/hour and receives a bonus commission of 600.  Their total pay is 4200.
 ariel = Employee('Ariel','hourly',30,'bonus',600,0)
 ariel.add_hours(120)
-
